@@ -1,0 +1,24 @@
+<div class="row frame" >
+    <div class="col-8 frame_p">
+        <div  class="row "  *ngIf="!isHidden">
+            <div class="col-1"></div>
+            <div class="col-10 tit" >
+            <h2>Welcome to the Book store</h2>
+        </div>
+        <div class="col-1"></div>
+        </div>
+        <div *ngIf="isHidden" >
+        <app-book></app-book>
+    </div>
+</div>
+    <div class="col-4  frame_p">
+<div class="row">
+    <div class="col-1"></div>
+       <div class="col-10 center" >
+            <button  type="button" class="btn btn-primary" (click)="getBooks()"  >getBooks</button>
+       </div>
+       <div class="col-1"></div>
+    </div>
+    </div>
+</div>
+    
