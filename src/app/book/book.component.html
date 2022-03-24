@@ -1,0 +1,64 @@
+<div class="center">
+  <div class="row center mrg ">
+    <h3>List of books</h3>
+  </div>
+  <div class=" row tab_w" >
+<mat-table [dataSource]="matDataSource">
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
+      <mat-cell *matCellDef="let Book"> {{Book.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let Book"> {{Book.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description</mat-header-cell>
+      <mat-cell *matCellDef="let Book"> {{Book.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Price">
+      <mat-header-cell *matHeaderCellDef> Price</mat-header-cell>
+      <mat-cell *matCellDef="let Book"> {{Book.price}} </mat-cell>
+    </ng-container>
+   
+    <mat-header-row *matHeaderRowDef="displayedColumns; "></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getBook(row)"
+      [ngClass]="{ 'selected-row' : row.selected }"></mat-row>
+    
+  </mat-table>
+</div>
+<div class=" row">
+  <div class="center" >
+    <button *ngIf="isSelectedRow" type="button" class="btn btn-primary mrg" (click)="Delete();"  >Delete</button>
+    
+    <button *ngIf="isSelectedRow" type="button" class="btn btn-primary mrg"   (click)="Edit();" >Edit</button>
+    
+    <button  type="button" class="btn btn-primary mrg"  (click)="Add()" >Add</button>
+</div>
+<div class="bord" *ngIf="isOpenDiv" >
+<div class=" row " >
+  <div class="col-4">
+  <small for="price">Price</small>
+  <input  class="input-field form-control" type="number" name="price" required="required" [(ngModel)]="bookDiv.price">
+</div>
+<div class="col-4">
+  <small for="description">Description</small>
+  <input class="input-field form-control" type="text" name="description" required="required" [(ngModel)]="bookDiv.description">
+</div>
+<div class="col-4">
+  <small for="name">Name</small>
+ 
+ <input  class="input-field form-control" type="text" name="name" required="required" [(ngModel)]="bookDiv.name">
+</div>
+</div>
+<div class=" row ">
+  <div class="center" >
+  <button type="button" class="btn btn-primary mrg" (click)="save();"  >Save</button>
+    
+  <button  type="button" class="btn btn-primary mrg" (click)="ClearDiv();"  >Cancel</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+ 
