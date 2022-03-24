@@ -1,0 +1,56 @@
+
+.frame{
+    
+    height: 90%;
+    min-height: 540px;
+}
+
+.frame_p{
+    border: #070707 1px;
+    border-style: solid; 
+}
+// .button{
+//     border: #070707 1px;
+//     border-style: solid; 
+     
+// }
+.tit{
+    border: #070707 1px;
+    border-style: solid; 
+    margin-top: 30%; 
+    width: 80%;
+    text-align: center;
+}
+.btn-primary{
+    color: rgb(14, 13, 13);
+    background-color: azure;
+    border: #070707 1px;
+    border-style: solid; 
+    margin-top: 30%;
+    max-width: 100%;
+    text-align: center;
+    
+}
+
+.center{
+    text-align: center;
+}
+@media screen and (max-width: 812px) {
+    // .max-width{
+    // max-width: 100%;
+    // }
+   
+    .btn-primary{
+        color: rgb(14, 13, 13);
+        background-color: azure;
+        border: #070707 0.5px;
+        border-style: solid; 
+        margin-top: 30%;
+        max-width: 90%;
+        text-align: center;
+        //padding-right: 2%;
+        padding-left: 2%;
+        font-size: 0.5rem;
+      }
+     
+    }
